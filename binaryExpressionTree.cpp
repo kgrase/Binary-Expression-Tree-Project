@@ -28,6 +28,9 @@ double binaryExpressionTree::evaluateExpressionTree(const std::string& postfixEx
                 else {
                     // Error – Stack is empty
                     delete rLink;
+                    std::cout << "Error - Stack is empty." << std::endl;
+                    return 0;
+
                 }
 
                 node = new nodeType<std::string>;
@@ -39,11 +42,15 @@ double binaryExpressionTree::evaluateExpressionTree(const std::string& postfixEx
             }
             else {
                 // Error – Stack is empty
+                std::cout << "Error – Stack is empty." << std::endl;
+                return 0;
             }
         }
         else {
             // Error – unsupported token
             while (!stk.empty()) {delete stk.top(); stk.pop();}
+            std::cout << "Error – unsupported token." << std::endl;
+            return 0;
         }
 
         token = strtok(nullptr, " ");
@@ -56,6 +63,8 @@ double binaryExpressionTree::evaluateExpressionTree(const std::string& postfixEx
 
     if (!stk.empty()) {
         // There was an error
+        std::cout << "Error - There was an error creating expression tree." << std::endl;
+        return 0;
     }
 
     delete[] expression;
