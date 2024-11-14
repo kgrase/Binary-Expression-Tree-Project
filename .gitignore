@@ -31,5 +31,11 @@
 *.out
 *.app
 
+# Intermediate Linker File
+*.ilk
+
+# Visual C++ 2015 Program Database
+*.pdb
+
 # VS Code
 .vscode/
