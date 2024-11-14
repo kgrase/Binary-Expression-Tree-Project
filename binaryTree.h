@@ -100,9 +100,6 @@ public:
     ~binaryTreeType();
     //Destructor
 
-protected:
-    nodeType<elemType>  *root;
-
 private:
     void copyTree(nodeType<elemType>* &copiedTreeRoot,
                   nodeType<elemType>* otherTreeRoot);
