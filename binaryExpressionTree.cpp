@@ -93,12 +93,14 @@ double binaryExpressionTree::evaluateExpressionTree(nodeType<std::string>* node)
 
     if (node->info == "+")
         return lvalue + rvalue;
-    if (node->info == "-")
+    else if (node->info == "-")
         return lvalue - rvalue;
-    if (node->info == "*")
+    else if (node->info == "*")
         return lvalue * rvalue;
-    if (node->info == "/")
+    else if (node->info == "/")
         return lvalue / rvalue;
+    else
+        std::cout << "Error - Unsupported operator." << std::endl;
 
     return 0;
 }

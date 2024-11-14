@@ -10,6 +10,10 @@ int main() {
         std::cerr << "Error opening file." << std::endl;
         return 1;  // Return with an error code if the file can't be opened
     }
+    if (!ofs.is_open()) {
+        std::cerr << "Error opening file to write answers." << std::endl;
+        return 1;  // Return with an error code if the file can't be opened
+    }
 
     std::string line;
     // Read the file line by line
