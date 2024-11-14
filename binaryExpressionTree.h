@@ -14,7 +14,8 @@ class binaryExpressionTree : public binaryTreeType<std::string> {
     void deleteNode(const std::string& deleteItem) override {}
 
     public:
-    double evaluateExpressionTree(const std::string& postfixExpression);
+    void buildExpressionTree(const std::string& postfixExpression);
+    double evaluateExpressionTree();
 
     private:
     double evaluateExpressionTree(nodeType<std::string>* node);

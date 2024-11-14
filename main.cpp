@@ -15,7 +15,8 @@ int main() {
     // Read the file line by line
     while (std::getline(ifs, line)) {
         // Process the line (e.g., print it)
-        ofs << binexptree.evaluateExpressionTree(line) << std::endl;
+        binexptree.buildExpressionTree(line);
+        ofs << binexptree.evaluateExpressionTree() << std::endl;
         binexptree.destroyTree();
     }
 
