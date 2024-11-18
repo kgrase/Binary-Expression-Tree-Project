@@ -4,7 +4,7 @@
 int main() {
     binaryExpressionTree binexptree;
     std::ifstream ifs("RpnData.txt");
-    std::ofstream ofs("answers.txt");
+    std::ofstream ofs("RpnOutput.txt");
 
     if (!ifs.is_open()) {
         std::cerr << "Error opening file." << std::endl;
@@ -19,8 +19,10 @@ int main() {
     // Read the file line by line
     while (std::getline(ifs, line)) {
         // Process the line (e.g., print it)
+        line.erase(std::remove(line.begin(), line.end(), '\r'), line.end());
         binexptree.buildExpressionTree(line);
-        ofs << binexptree.evaluateExpressionTree() << std::endl;
+        ofs << "--------------------------------------------" << std::endl;
+        ofs << line << " = " << binexptree.evaluateExpressionTree() << std::endl;
         binexptree.destroyTree();
     }
 

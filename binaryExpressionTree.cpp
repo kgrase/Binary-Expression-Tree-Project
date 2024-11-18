@@ -11,6 +11,8 @@ void binaryExpressionTree::buildExpressionTree(const std::string& postfixExpress
         if (std::regex_match(token, std::regex("^\\d*$"))) {
             nodeType<std::string>* node = new nodeType<std::string>;
             node->info = std::string(token);
+            node->lLink = NULL;
+            node->rLink = NULL;
             stk.push(node);
         }
         else if (std::regex_match(token, std::regex("^[+-/*]$"))) {
